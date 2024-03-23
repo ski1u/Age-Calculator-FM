@@ -1,0 +1,153 @@
+@font-face {
+    font-family: poppin;
+    src: url(assets/fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: poppinbig;
+    src: url(assets/fonts/Poppins-ExtraBold.ttf);
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: poppin;
+    font-weight: 1000;
+}
+
+:root {
+    --Purple: hsl(259, 100%, 65%);
+    --Lightred: hsl(0, 100%, 67%);
+
+    --White: hsl(0, 0%, 100%);
+    --Offwhite: hsl(0, 0%, 94%);
+    --Lightgrey: hsl(0, 0%, 86%);
+    --Smokeygrey: hsl(0, 1%, 44%);
+    --Offblack: hsl(0, 0%, 8%);
+}
+
+body {
+    background-color: var(--Lightgrey);
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+.container {
+    background-color: var(--White);
+    border-radius: 18px;
+    border-bottom-right-radius: 200px;
+    padding: 40px;
+    width: 1000px;
+    position: relative
+}
+.input svg {
+    position: absolute;
+    background-color: var(--Purple);
+    border-radius: 50%;
+    padding: 20px;
+    width: 100px;
+    height: 100px;
+    top: 185px;
+    left: 800px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.form {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid var(--Smokeygrey);
+    padding-bottom: 30px;
+    width: 90%;
+}
+.form > div {
+    margin: 20px;
+}
+.form > div > label {
+    color: var(--Smokeygrey);
+    letter-spacing: 3px;
+    transition: all 0.4s
+}
+.form > div > input {
+    border: 1px solid var(--Lightgrey);
+    border-radius: 4px;
+    height: 75px;
+    width: 200px;
+    font-size: 32px;
+    padding: 20px;
+    transition: all 0.4s
+}
+
+
+
+
+
+.output h1 span {
+    color: var(--Purple);
+    font-size: 120px;
+    font-style: italic;
+    margin-right: 15px;
+    letter-spacing: 5px;
+}
+.output h1:not(span) {
+    font-family: poppinbig;
+    font-size: 100px;
+    display: flex;
+    align-items: center;
+    height: 125px
+}
+.output > * {
+    cursor: default;
+}
+
+
+
+
+
+
+
+/* ANIMATIONS */
+.input svg:hover {
+    background-color: var(--Offblack);
+    width: 110px;
+    height: 110px;
+}
+.form > div > input:focus {
+    border: 1px solid var(--Purple)
+}
+
+
+
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 1000px) {
+    .container {
+        width: 90%;
+    }
+    .input svg {
+        position: absolute;
+        /* left: 325px; */
+        left: 42%;
+        top: 230px;
+    }
+    .form {
+        width: 100%;
+        margin-bottom: 100px;
+    }
+    .form > div > input {
+        border-radius: 20px;
+        width: 100%;
+        margin-bottom: 75px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .output h1 span {
+        font-size: 75px;
+    }
+    .output h1:not(span) {
+        font-size: 50px;
+    }
+}
